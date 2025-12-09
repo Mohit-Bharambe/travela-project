@@ -1,0 +1,109 @@
+﻿{% extends 'base.html' %}
+
+{% block body%}
+
+
+
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+
+        <!-- Contact Start -->
+        <div class="container-fluid contact bg-light py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3 my-5">Create Account</h5>
+                 
+                </div>
+                <div class="row g-5 align-items-center justify-content-center">
+                    <div class="col-lg-8">
+                        <h3 class="mb-2 mx-auto text-center">REGISTER</h3>
+                        
+                        {% if messages %}
+                        <div class="messages mb-3">
+                            {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        
+                        <form action="/register/" method="post">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        {{ form.username }}
+                                        <label for="id_username">Username</label>
+                                        {% if form.username.errors %}
+                                        <div class="text-danger small mt-1">{{ form.username.errors }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        {{ form.email }}
+                                        <label for="id_email">Email Address</label>
+                                        {% if form.email.errors %}
+                                        <div class="text-danger small mt-1">{{ form.email.errors }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        {{ form.password1 }}
+                                        <label for="id_password1">Password</label>
+                                        {% if form.password1.errors %}
+                                        <div class="text-danger small mt-1">{{ form.password1.errors }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        {{ form.password2 }}
+                                        <label for="id_password2">Confirm Password</label>
+                                        {% if form.password2.errors %}
+                                        <div class="text-danger small mt-1">{{ form.password2.errors }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Register</button>
+                                </div>
+                                
+                                <div class="col-12 text-center">
+                                    <p class="mb-0">Already have an account? <a href="/login/" class="text-primary">Login here</a></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+        <!-- Subscribe Start -->
+        <div class="container-fluid subscribe py-5">
+            <div class="container text-center py-5">
+                <div class="mx-auto text-center" style="max-width: 900px;">
+                    <h5 class="subscribe-title px-3">Subscribe</h5>
+                    <h1 class="text-white mb-4">Our Newsletter</h1>
+                    <p class="text-white mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
+                    </p>
+                    <div class="position-relative mx-auto">
+                        <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Subscribe End -->
+
+  {% endblock body %}

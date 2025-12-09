@@ -1,0 +1,4 @@
+﻿Django==5.2.4
+Pillow==11.0.0
+python-decouple==3.8
+whitenoise==6.8.2
