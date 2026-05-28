@@ -1,4 +1,4 @@
-﻿# Python
+# ─── Python ───
 *.py[cod]
 *.class
 *.so
@@ -19,28 +19,30 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual Environment
+# ─── Virtual Environment ───
 venv/
 ENV/
 env/
+Mohit/
 Scripts/
 Include/
 Lib/
 pyvenv.cfg
 
-# Django
+# ─── Django ───
 *.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-/media
-/staticfiles
+/backend/media/
+/backend/staticfiles/
 
-# Environment variables
+# ─── Environment variables ───
 .env
 .env.local
+.env.production
 
-# IDE
+# ─── IDE ───
 .vscode/
 .idea/
 *.swp
@@ -48,11 +50,18 @@ db.sqlite3-journal
 *~
 .DS_Store
 
-# Testing
+# ─── Testing ───
 .coverage
 htmlcov/
 .pytest_cache/
 
-# Migrations (optional - uncomment if you want to exclude)
+# ─── Cache ───
+__pycache__/
+*.pyc
+
+# ─── Migrations (optional — uncomment if you want to exclude) ───
 # */migrations/*.py
 # !*/migrations/__init__.py
+
+# ─── Old root-level files (remove after migration) ───
+# These should be deleted from root after restructuring
